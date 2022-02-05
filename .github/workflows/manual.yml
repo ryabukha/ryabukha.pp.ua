@@ -32,12 +32,13 @@ jobs:
         pip install zope.interface==5.4.0
         pip install certbot-s3front
     - run: |
-        certbot --agree-tos -a certbot-s3front:auth \
+        certbot -n --init --agree-tos -a \
+        certbot-s3front:auth -i certbot-s3front:installer \
         --certbot-s3front:auth-s3-bucket ${{ secrets.AWS_S3_BUCKET }} \
-        --certbot-s3front:auth-s3-region eu-central-1 \
-        -i certbot-s3front:installer \
-        --certbot-s3front:installer-cf-distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }}\
-        -d ${{ secrets.DOMAIN }}
+        --certbot-s3front:installer-cf-distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} \
+        --email ${{ secrets.EMAIL }} \
+        -d ${{ secrets.DOMAIN }} \
+        --config-dir ~/.certbot/config --logs-dir ~/.certbot/logs --work-dir ~/.certbot/work
         
                 
 #     - name: Send greeting
