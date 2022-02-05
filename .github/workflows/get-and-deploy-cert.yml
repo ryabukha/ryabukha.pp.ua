@@ -6,28 +6,21 @@ name: create cert for site
 # or API.
 on:
   workflow_dispatch:
-#     # Inputs the workflow accepts.
-#     inputs:
-#       name:
-#         # Friendly description to be shown in the UI instead of 'name'
-#         description: 'Person to greet'
-#         # Default value if no value is explicitly provided
-#         default: 'World'
-#         # Input has to be provided for the workflow to run
-#         required: true
 
 jobs:
-  getsert:
+  get-and-deploy-cert-to-s3:
     runs-on: ubuntu-latest
     steps:
-    - name: blabla
+    - name: install certbot
+      run: |
+        pip install zope.interface==5.4.0
+        pip install certbot-s3front
+    
+    - name: get and deploy cert to s3
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        python --version
-        pip install zope.interface==5.4.0
-        pip install certbot-s3front
         certbot -n --init --agree-tos -a \
         certbot-s3front:auth -i certbot-s3front:installer \
         --certbot-s3front:auth-s3-bucket ${{ secrets.AWS_S3_BUCKET }} \
