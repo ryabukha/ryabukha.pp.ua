@@ -33,11 +33,11 @@ jobs:
         pip install certbot-s3front
     - run: |
         certbot --agree-tos -a certbot-s3front:auth \
-        --certbot-s3front:auth-s3-bucket $AWS_S3_BUCKET \
+        --certbot-s3front:auth-s3-bucket ${{ secrets.AWS_S3_BUCKET }} \
         --certbot-s3front:auth-s3-region eu-central-1 \
         -i certbot-s3front:installer \
-        --certbot-s3front:installer-cf-distribution-id $AWS_DISTRIBUTION_ID \
-        -d $DOMAIN
+        --certbot-s3front:installer-cf-distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }}\
+        -d ${{ secrets.DOMAIN }}
         
                 
 #     - name: Send greeting
