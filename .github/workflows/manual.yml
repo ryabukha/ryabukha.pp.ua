@@ -26,5 +26,18 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
+    - uses: actions/checkout@v1
+    - run: |
+        apt-get install python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev dialog
+        pip install certbot-s3front
+        certbot --agree-tos -a certbot-s3front:auth \
+        --certbot-s3front:auth-s3-bucket $AWS_S3_BUCKET \
+        --certbot-s3front:auth-s3-region eu-central-1 \
+        -i certbot-s3front:installer \
+        --certbot-s3front:installer-cf-distribution-id $AWS_DISTRIBUTION_ID \
+        -d $DOMAIN
+        
+                
+#     - name: Send greeting
+#       run: echo "Hello ${{ github.event.inputs.name }}"
+#     - name: 
