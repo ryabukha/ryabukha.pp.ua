@@ -28,7 +28,7 @@ jobs:
     # Runs a single command using the runners shell
     - uses: actions/checkout@v1
     - run: |
-        echo python --version
+        python --version
         pip install zope.interface
         pip install certbot-s3front
     - run: |
