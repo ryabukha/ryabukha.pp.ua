@@ -19,17 +19,17 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'eu-central-1'   # optional: defaults to us-east-1
-#         SOURCE_DIR: 'public'      # optional: defaults to entire repository
+        SOURCE_DIR: 'html'      # optional: defaults to entire repository
   invalidate-cloudfront:
     needs: deploy
     runs-on: ubuntu-latest
-    steps: 
+    steps:
     - name: Invalidate Cloudfront
       uses: docker://rewindio/github-action-cloudfront-invalidate
       env:
         DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
         PATH_TO_INVALIDATE: /*
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_REGION: 'eu-central-1'
