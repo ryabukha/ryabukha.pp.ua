@@ -28,6 +28,13 @@ SOCIAL = (('email', 's.ryabukha@gmail.com'),
 
 DEFAULT_PAGINATION = False
 THEME = "theme"
+THEME_STATIC_DIR = 'static'
+TEMPLATE_PAGES = {
+    'pages/books.html': 'books.html',
+    'pages/index.html': 'index.html',
+    'pages/cv.html': 'cv.html',
+    'pages/contact.html': 'contact.html',
+}
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
