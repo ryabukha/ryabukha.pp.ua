@@ -1,8 +1,14 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Personal Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/icons.css">
+</head>
+<body>
 
-{% block title %}{{ SITENAME }}{% endblock %}
-
-{% block content %}
+    <section class="section">
+        <div class="container is-flex is-justify-content-center">
 <div>
     <div class="block">
       <div class="title icon-generic">
@@ -20,4 +26,8 @@
         <button class="button is-light" type="button" onclick="window.location='tg://resolve?domain=serg_ryabukha'">Telegram: @serg_ryabukha</button>
       </div>
 </div>
-{% endblock %}
+        </div>
+    </section>
+
+</body>
+</html>

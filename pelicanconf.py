@@ -28,6 +28,7 @@ SOCIAL = (('email', 's.ryabukha@gmail.com'),
 
 DEFAULT_PAGINATION = False
 THEME = "theme"
+THEME_STATIC_DIR = 'static'
 TEMPLATE_PAGES = {
     'pages/books.html': 'books.html',
     'pages/index.html': 'index.html',
