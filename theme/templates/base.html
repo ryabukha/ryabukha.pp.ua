@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-    <section class="hero">
-        <!-- <div class="container is-flex is-justify-content-space-around"> -->
-        <div class="hero-body is-max-desktop is-flex is-flex-wrap-wrap is-justify-content-center">
+    <section class="hero is-fullheight">
+        <div class="hero-body is-flex is-justify-content-center">
             {% block content %}{% endblock %}
         </div>
+        <footer class="hero-foot is-family-code	px-2 py-2">
+            <div class="content has-text-right">
+              <p>2022</p>
+            </div>
+        </footer>
     </section>
-
 </body>
 </html>
