@@ -7,27 +7,27 @@ on:
 #     - master
 
 jobs:
-  # render-html:
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     - name: rende
   deploy:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - name: install pelican
       run: |
-        pip install pelican
+        pip install pelican aws
+    - name: render html
+      run: |
         make html
-
-    - uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --acl public-read --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*'
+    - name: s3 upload
+      run: |
+        aws s3 sync "$(SOURCE_DIR)"/ s3://$(AWS_S3_BUCKET) --acl public-read --delete
+    # - uses: jakejarvis/s3-sync-action@master
+    #   with:
+    #     args: --acl public-read --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*'
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: 'eu-central-1'   # optional: defaults to us-east-1
+        AWS_REGION: ${{ secrets.AWS_REGION }}   # optional: defaults to us-east-1
         SOURCE_DIR: 'html'      # optional: defaults to entire repository
   invalidate-cloudfront:
     needs: deploy
@@ -41,4 +41,4 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-        AWS_REGION: 'eu-central-1'
+        AWS_REGION: ${{ secrets.AWS_REGION }}
