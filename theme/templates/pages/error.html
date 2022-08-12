@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div>
+    <div class="block">
+        <div class="title">
+          <h1>Page not found</h1>
+        </div>
+        <div class="is-family-monospace	pt-3">
+          <p>4xx. page not found...</p>
+        </div>
+    </div>
+      <div class="buttons block is-mobile is-flex">
+        <button class="button is-normal is-fullwidth is-info" type="button" onclick="window.location='/';">To home page</button>
+      </div>
+</div>
+{% endblock %}

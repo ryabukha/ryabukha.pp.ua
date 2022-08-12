@@ -34,6 +34,7 @@ TEMPLATE_PAGES = {
     'pages/index.html': 'index.html',
     'pages/cv.html': 'cv.html',
     'pages/contact.html': 'contact.html',
+    'pages/error.html': 'error.html',
 }
 
 # Uncomment following line if you want document-relative URLs when developing
