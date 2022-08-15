@@ -22,9 +22,9 @@ AUTHOR_FEED_RSS = None
 #          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('email', 's.ryabukha@gmail.com'),
-        ('github', 'https://github.com/ryabukha'),
-        ('telegram', '@serg.ryabukha'))
+SOCIAL = (('email', 'mailto:s.ryabukha@gmail.com', 's.ryabukha@gmail.com'),
+        ('github', 'https://github.com/ryabukha', 'github.com/ryabukha'),
+        ('telegram', 'https://t.me/serg_ryabukha', 'serg_ryabukha'))
 
 DEFAULT_PAGINATION = False
 THEME = "theme"
@@ -36,6 +36,13 @@ TEMPLATE_PAGES = {
     'pages/contact.html': 'contact.html',
     'pages/error.html': 'error.html',
 }
+
+MENUITEMS = (
+    ('home', '/'),
+    ('cv', '/cv.html'),
+    ('books', '/books.html'),
+    ('contact', '/contact.html'),
+)
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

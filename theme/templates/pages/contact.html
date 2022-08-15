@@ -3,16 +3,15 @@
 {% block title %}{{ SITENAME }}{% endblock %}
 
 {% block content %}
-<div class="d-flex justify-content-between mb-3 align-items-center">
-  <div class="p-2">
-  </div>
-
-  <div class="p-2 align-self-center">
-    <div class="icon icon-generic">Flex item 1</div>
+<div class="block">
     <div>
-      <h1>contact</h1>
+      <div class="block field is-mobile">
+      {% for type, link, name in SOCIAL %}
+      <div class="block">
+        <p><a class="button is-normal is-fullwidth is-info" href="{{ link }}">{{ type }}: {{ name }}</a></p>
+      </div>
+      {% endfor %}
+      </div>
     </div>
-  </div>
-<div class="p-2"></div>
 </div>
 {% endblock %}
