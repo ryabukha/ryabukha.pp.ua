@@ -2,12 +2,13 @@ name: Upload Website
 
 on:
   workflow_dispatch:
-#   push:
-#     branches:
-#     - master
+  pull_request:
+    types:
+      - closed
 
 jobs:
   deploy:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
@@ -30,6 +31,7 @@ jobs:
 
   invalidate-cloudfront:
     needs: deploy
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     steps:
     - name: Invalidate Cloudfront
