@@ -1,0 +1,65 @@
+---
+name:
+  eng: "Sergiy Ryabukha"
+  ukr: "Сергій Рябуха"
+photo:
+  path: "./static/photo/photo.png"
+job:
+  title: "junior DevOps, System Administrator"
+contacts:
+  location: "Kyiv, Ukraine"
+  tel: "+38 099 289 0420"
+  email: "s.ryabukha@gmail.com"
+jobs_block_title: "Responsibilities"
+jobs:
+  - name: "RGC - DevOps engineer"
+    years: "2022/04-present"
+    description: |
+      Building automated processes wherever possible.
+      Creating pipelines with gitlab.
+      Writing ansible plugins.
+      Transferring apps to Kubernetes.
+      Monitoring and troubleshooting.
+  - name: "Star Way Media - System administrator"
+    years: "2019/09-2022/03"
+    description: |
+      Setting up and maintaining networks, network equipment and workstations. Linux administration. Maintaining CI/CD.
+  - name: "Control Systems - Support engineer"
+    years: "2015/08-2019/01"
+    description: |
+      Support and consultation of users. Setting up and maintaining networks, network equipment and workstations.
+experience_block_title: "Experience with"
+experience:
+  - "Git (GitHub, GitLab)"
+  - "Ansible (configure instances, write plugins)"
+  - "Kubernetes (write and deploy Helm chart)"
+  - "Docker (write Dockerfile, docker-compose)"
+  - "CI/CD pipelines (GitLab CI, GitHub Actions)"
+  - "Automation with python (backups, routine tasks)"
+  - "AWS (EC2, VPC, S3, IAM, CF)"
+  - "IaC: Pulumi"
+  - "OpenSearch, Grafana, Prometheus"
+  - "DB: Postgresql, MySQL"
+  - "Network (Set up and maintain Cisco, mikrotik, UniFi)"
+  - "Hardware (Set up and maintain workstations, servers)"
+  - "Frameworks: laravel, pelican"
+  - "People (support and consultation of users of the IT office)"
+education_block_title: "Education"
+education:
+  - name: NTUU "Kyiv Polytechnic Institute"
+    years: "2007-2012"
+    description: "Bachelor degree. Faculty of Chemical Engineering."
+courses_block_title: "Courses"
+courses:
+  - name: "OTUS"
+    years: "2017-2018"
+    description: "DevOps practices and tools."
+  - name: "VoIPlab PortaOne"
+    years: "2014-2015"
+    description: "Basics of administration MySQL, Linux, Asterisk."
+languages_block_title: "Languages"
+languages:
+  - name: "English"
+    level: "pre-intermediate"
+  - name: "Ukrainian, Russian"
+    level: "native speaker"

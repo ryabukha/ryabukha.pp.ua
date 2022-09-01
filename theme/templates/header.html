@@ -1,0 +1,19 @@
+<nav class="level" role="navigation" aria-label="dropdown navigation">
+
+    <div class="level-left">
+        <div class="level-item">
+    </div>
+    </div>
+
+    <div class="level-right">
+    <div class="level-item">
+    <div class="buttons block is-mobile is-flex px-2 py-2">
+{% for title, link in MENUITEMS %}
+        <a href="{{ link }}" class="button is-light">
+            {{ title }}
+        </a>
+{% endfor %}
+    </div>
+    </div>
+    </div>
+</nav>
