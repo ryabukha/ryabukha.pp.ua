@@ -10,35 +10,24 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./static/ico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./static/ico/favicon-16x16.png">
     <link rel="manifest" href="./static/ico/site.webmanifest">
+    {% block css %}{% endblock %}
 </head>
 <body>
-    <section class="hero is-fullheight">
-
-<!-- Hero head: will stick at the top -->
-  <div class="hero-head is-flex is-justify-content-right">
-
-    <nav role="navigation" aria-label="dropdown navigation">
-        <div class="buttons block is-mobile is-flex px-2 py-2">
-        {% for title, link in MENUITEMS %}
-            <a href="{{ link }}" class="button is-light">
-                {{ title }}
-            </a>
-            {% endfor %}
+    <section class="container is-max-desktop">
+        <div class="column is-narrow">
+        <div class="print-hidden">
+            {% include 'header.html' %}
         </div>
-      </nav>
 
-  </div>
+        <div style="min-height: 380px;">
 
-
-        <div class="hero-body is-flex is-justify-content-center">
             {% block content %}{% endblock %}
         </div>
 
-        <footer class="hero-foot is-family-code	px-2 py-2">
-            <div class="content has-text-right">
-              <p>2022</p>
-            </div>
-        </footer>
+        <div class="print-hidden">
+            {% include 'footer.html' %}
+        </div>
+    </div>
     </section>
 </body>
 </html>

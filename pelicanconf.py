@@ -1,3 +1,8 @@
+import os
+import sys
+sys.path.append(os.curdir)
+from cv import CV_DATA
+
 AUTHOR = 'Sergiy Ryabukha'
 SITENAME = 'Personal Page'
 SITEURL = ''
@@ -33,6 +38,7 @@ TEMPLATE_PAGES = {
     'pages/books.html': 'books.html',
     'pages/index.html': 'index.html',
     'pages/cv.html': 'cv.html',
+    'pages/cvfull.html': 'cvfull.html',
     'pages/contact.html': 'contact.html',
     'pages/error.html': 'error.html',
 }
@@ -40,9 +46,10 @@ TEMPLATE_PAGES = {
 MENUITEMS = (
     ('home', '/'),
     ('cv', '/cv.html'),
+    ('cvfull', '/cvfull.html'),
     ('books', '/books.html'),
     ('contact', '/contact.html'),
 )
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
