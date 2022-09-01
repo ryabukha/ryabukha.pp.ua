@@ -15,8 +15,8 @@ def load_cv():
 CV_DATA = load_cv()
 
 def render_pdf(
-    source_html_file="./output/cvfull.html",
-    output_file="./output/cvfull.pdf"
+    source_html_file="./output/cv.html",
+    output_file="./output/cv.pdf"
 ):
 
     html = HTML(source_html_file)
@@ -31,8 +31,8 @@ def render_pdf(
         output_file, stylesheets=[css])
 
 if __name__ == "__main__":
-    source_html_file = os.path.join(sys.argv[1], "cvfull.html")
-    output_file = os.path.join(sys.argv[1], "cvfull.pdf")
+    source_html_file = os.path.join(sys.argv[1], "cv.html")
+    output_file = os.path.join(sys.argv[1], "sergiy_ryabukha_cv.pdf")
     render_pdf(source_html_file=source_html_file,
         output_file=output_file)
     print("ok")

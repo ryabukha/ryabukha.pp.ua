@@ -16,7 +16,26 @@
     <section class="container is-max-desktop">
         <div class="column is-narrow">
         <div class="print-hidden">
-            {% include 'header.html' %}
+            <nav class="level" role="navigation" aria-label="dropdown navigation">
+
+                <div class="level-left">
+                    <div class="level-item">
+                </div>
+                </div>
+
+                <div class="level-right">
+                <div class="level-item">
+                <div class="buttons block is-mobile is-flex px-2 py-2">
+                {% block downloadpdf %}{% endblock %}
+            {% for title, link in MENUITEMS %}
+                    <a href="{{ link }}" class="button is-light">
+                        {{ title }}
+                    </a>
+            {% endfor %}
+                </div>
+                </div>
+                </div>
+            </nav>
         </div>
 
         <div style="min-height: 380px;">
