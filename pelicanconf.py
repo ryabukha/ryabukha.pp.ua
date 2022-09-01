@@ -38,7 +38,6 @@ TEMPLATE_PAGES = {
     'pages/books.html': 'books.html',
     'pages/index.html': 'index.html',
     'pages/cv.html': 'cv.html',
-    'pages/cvfull.html': 'cvfull.html',
     'pages/contact.html': 'contact.html',
     'pages/error.html': 'error.html',
 }
@@ -46,7 +45,6 @@ TEMPLATE_PAGES = {
 MENUITEMS = (
     ('home', '/'),
     ('cv', '/cv.html'),
-    ('cvfull', '/cvfull.html'),
     ('books', '/books.html'),
     ('contact', '/contact.html'),
 )
