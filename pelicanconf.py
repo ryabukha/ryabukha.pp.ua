@@ -45,9 +45,9 @@ TEMPLATE_PAGES = {
 MENUITEMS = (
     ('home', '/'),
     ('cv', '/cv.html'),
-    ('books', '/books.html'),
     ('contact', '/contact.html'),
 )
 
+    # ('books', '/books.html'),
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
