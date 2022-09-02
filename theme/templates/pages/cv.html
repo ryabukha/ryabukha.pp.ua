@@ -14,10 +14,11 @@
 
 {% block content %}
 <div class="page-print">
-<div class="columns">
+<div class="columns is-centered">
   <div class="column column-print is-2">
     <figure class="image is-128x128">
-      <img src="{{ CV_DATA.photo.path }}">
+        <!-- <div class="icon-generic py-4"></div> -->
+        <img src="{{ CV_DATA.photo.path }}">
     </figure>
   </div>
   <div class="column column-print is-4">
@@ -40,7 +41,7 @@
   </div>
 </div>
 
-<div class="columns">
+<div class="columns is-centered">
     <div class="column column-print is-6">
       <div class="col-header-blue col-block">
         {{ CV_DATA.jobs_block_title }}

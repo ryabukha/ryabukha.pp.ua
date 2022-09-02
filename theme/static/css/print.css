@@ -1,62 +1,67 @@
 @page {
-    margin-top: 1cm;
-    margin-bottom: 1cm;
-    margin-left: 1cm;
-    margin-right: 0cm;
+    margin-top: 2cm;
+    margin-bottom: 1.5cm;
+    margin-left: 1.5cm;
+    margin-right: 1.5cm;
     padding-top: 0cm;
     padding-left: 0cm;
     padding-right: 0cm;
     size: A4 portrait;
 }
+
 body {
     font-size: 10.5pt;
-
 }
-.is-2 {
-    width: 3cm;
-    margin-top: 0cm;
-    margin-bottom: 0cm;
-    margin-left: 0cm;
-    margin-right: 0cm;
-    padding-top: 0cm;
-    padding-left: 0cm;
-    padding-right: 0cm;
-}
-.is-3 {
-    width: 7cm;
-    margin-top: 0cm;
-    margin-bottom: 0cm;
-    margin-left: 0cm;
-    margin-right: 0cm;
-    padding-top: 0cm;
-    padding-left: 0cm;
-    padding-right: 0cm;
 
-}
-.is-4 {
-    width: 9cm;
-    margin-top: 0cm;
-    margin-bottom: 0cm;
-    margin-left: 0cm;
-    margin-right: 0cm;
-    padding-top: 0cm;
-    padding-left: 0cm;
-    padding-right: 0cm;
-
-}
-.is-6 {
-    width: 12cm;
-    margin-top: 0cm;
-    margin-bottom: 0cm;
-    margin-left: 0cm;
-    margin-right: 0cm;
-    padding-top: 0cm;
-    padding-left: 0cm;
-    padding-right: 1.5cm;
-
+.image {
+    border: 1px solid red;
 }
 .print-hidden {
     display: none;
+}
+
+.is-2 {
+    width: 2cm;
+    /* margin-top: 0cm;
+    margin-bottom: 0cm;
+    margin-left: 0cm;
+    margin-right: 0cm;
+    padding-top: 0cm;
+    padding-left: 0cm;
+    padding-right: 0cm; */
+}
+.is-3 {
+    width: 5cm;
+    /* margin-top: 0cm;
+    margin-bottom: 0cm;
+    margin-left: 0cm;
+    margin-right: 0cm;
+    padding-top: 0cm;
+    padding-left: 0cm;
+    padding-right: 0cm; */
+
+}
+.is-4 {
+    width: 7cm;
+    /* margin-top: 0cm;
+    margin-bottom: 0cm;
+    margin-left: 0cm;
+    margin-right: 0cm;
+    padding-top: 0cm;
+    padding-left: 0cm;
+    padding-right: 0cm; */
+
+}
+.is-6 {
+    width: 11cm;
+    /* margin-top: 0cm;
+    margin-bottom: 0cm;
+    margin-left: 0cm;
+    margin-right: 0cm;
+    padding-top: 0cm;
+    padding-left: 0cm;
+    padding-right: 1.5cm; */
+
 }
 .columns {
     width: 18cm;
@@ -71,15 +76,14 @@ body {
 .column-print {
     display: table-cell;
     vertical-align: top;
-
     margin-top: 0cm;
     margin-bottom: 0cm;
-    margin-right: 0cm;
+    /* margin-right: 0cm; */
     padding-top: 0cm;
-    padding-right: 0cm;
+    /* padding-right: 0cm; */
 
 }
-.col-header-job {
+/* .col-header-job {
     padding-right: 2cm;
   }
 .col-title-name {
@@ -91,4 +95,4 @@ body {
 .col-title-job {
     padding-right: 1cm;
     padding-left: 1cm;
-  }
+  } */
