@@ -2,51 +2,52 @@
 
 {% block title %}CV{% endblock %}
 {% block css %}
-    <link rel="stylesheet" href="./static/css/cv.css">
-    <link rel="stylesheet" href="./static/css/print.css" media="print">
+<link rel="stylesheet" href="./static/css/cv.css">
+<link rel="stylesheet" href="./static/css/print.css" media="print">
 {% endblock %}
 
 {% block downloadpdf %}
 <a href="./sergiy_ryabukha_cv.pdf" class="button is-info">
-    download pdf
+  download pdf
 </a>
 {% endblock %}
 
 {% block content %}
 <div class="page-print">
-<div class="columns">
-  <div class="column column-print is-2">
-    <figure class="image is-128x128">
-      <img src="{{ CV_DATA.photo.path }}">
-    </figure>
+  <div class="columns is-centered">
+    <div class="column column-print is-2">
+      <figure class="image is-128x128">
+        <!-- <div class="icon-generic py-4"></div> -->
+        <img src="{{ CV_DATA.photo.path }}">
+      </figure>
+    </div>
+    <div class="column column-print is-4">
+      <div class="col-title-name">
+        {{ CV_DATA.name.eng }}</br>
+        ({{ CV_DATA.name.ukr }})
+      </div>
+      <div class="col-title-job">
+        {{ CV_DATA.job.title }}
+      </div>
+    </div>
+    <div class="column column-print is-3">
+      <div>
+        {{ CV_DATA.contacts.location }}
+      </div>
+      <div class="has-text-weight-bold">
+        {{ CV_DATA.contacts.tel }}</br>
+        {{ CV_DATA.contacts.email }}</br>
+      </div>
+    </div>
   </div>
-  <div class="column column-print is-4">
-    <div class="col-title-name">
-      {{ CV_DATA.name.eng }}</br>
-      ({{ CV_DATA.name.ukr }})
-    </div>
-    <div class="col-title-job">
-      {{ CV_DATA.job.title }}
-    </div>
-  </div>
-  <div class="column column-print is-3">
-    <div>
-      {{ CV_DATA.contacts.location }}
-    </div>
-    <div class="has-text-weight-bold">
-      {{ CV_DATA.contacts.tel }}</br>
-      {{ CV_DATA.contacts.email }}</br>
-    </div>
-  </div>
-</div>
 
-<div class="columns">
+  <div class="columns is-centered">
     <div class="column column-print is-6">
       <div class="col-header-blue col-block">
         {{ CV_DATA.jobs_block_title }}
       </div>
 
-{% for job in CV_DATA.jobs %}
+      {% for job in CV_DATA.jobs %}
       <div class="col-block">
         <div class="col-header-job">
           {{ job.name }}
@@ -58,7 +59,7 @@
           {{ job.description | replace("\n", "<br>\n")}}
         </div>
       </div>
-{% endfor %}
+      {% endfor %}
 
       <div class="col-header-blue col-block">
         {{ CV_DATA.experience_block_title }}
@@ -66,9 +67,9 @@
 
       <div class="col-text col-block">
         <ul class="ul">
-{% for exp in CV_DATA.experience %}
+          {% for exp in CV_DATA.experience %}
           <li>{{ exp }}</li>
-{% endfor %}
+          {% endfor %}
         </ul>
       </div>
 
@@ -80,7 +81,7 @@
         {{ CV_DATA.education_block_title }}
       </div>
 
-{% for edu in CV_DATA.education %}
+      {% for edu in CV_DATA.education %}
       <div class="col-block">
         <div>
           <strong class="has-text-weight-bold">{{ edu.name }}.</strong> {{ edu.description }}
@@ -89,13 +90,13 @@
           {{ edu.years }}
         </div>
       </div>
-{% endfor %}
+      {% endfor %}
 
       <div class="col-header-blue col-block">
         {{ CV_DATA.courses_block_title }}
       </div>
 
-{% for cours in CV_DATA.courses %}
+      {% for cours in CV_DATA.courses %}
       <div class="col-block">
         <div>
           <strong class="has-text-weight-bold">{{ cours.name }}.</strong> {{ cours.description }}
@@ -104,7 +105,7 @@
           {{ cours.years }}
         </div>
       </div>
-{% endfor %}
+      {% endfor %}
 
       <div class="col-header-blue col-block">
         {{ CV_DATA.languages_block_title }}
@@ -112,13 +113,13 @@
 
       <div class="col-block">
         <div>
-{% for lang in CV_DATA.languages %}
+          {% for lang in CV_DATA.languages %}
           {{ lang.name }} - {{ lang.level }}</br>
-{% endfor %}
+          {% endfor %}
         </div>
       </div>
 
     </div>
-</div>
+  </div>
 </div>
 {% endblock %}
