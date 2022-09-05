@@ -5,11 +5,11 @@
 {% block content %}
 <div class="is-center">
 
-<div class="row is-center">
-    {% for type, link, name in SOCIAL %}
-    <a class="button primary col-6" href="{{ link }}">{{ type }}: {{ name }}</a>
-    <div class="is-full-width"></div>
-    {% endfor %}
-</div>
+    <div class="row is-center">
+        {% for type, link, name in SOCIAL %}
+        <a class="button primary col-6" href="{{ link }}">{{ type }}: {{ name }}</a>
+        <div class="is-full-width"></div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
