@@ -3,19 +3,20 @@
 {% block title %}{{ SITENAME }}{% endblock %}
 
 {% block content %}
-<div class="column is-6 is-offset-3">
+<div class="is-center">
 
-    <div class="block">
-        <div class="title">
+    <div>
+        <div>
             <h1>Page not found</h1>
         </div>
-        <div class="is-family-monospace	pt-3">
+        <div>
             <p>4xx. page not found...</p>
         </div>
     </div>
-    <div class="buttons block is-mobile is-flex">
-        <button class="button is-normal is-fullwidth is-info" type="button" onclick="window.location='/';">To home
-            page</button>
-    </div>
+</div>
+
+<div class="row is-center">
+    <button class="button primary col-6" type="button" onclick="window.location='/';">
+        To home page</button>
 </div>
 {% endblock %}
