@@ -3,7 +3,7 @@ name:
   eng: "Sergiy Ryabukha"
   ukr: "Сергій Рябуха"
 photo:
-  path: "./static/photo/smile.png"
+  path: "./static/photo/smile128.png"
 job:
   title: "junior DevOps, System Administrator"
 contacts:

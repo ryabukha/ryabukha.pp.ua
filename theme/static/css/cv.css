@@ -4,28 +4,28 @@
 
 .ul {
   list-style-type: square;
-  list-style-position: outside;
-  margin: 10px;
+  list-style-position: inside;
+  margin: 0px;
   padding: 0;
 }
 
-.col-block {
+.block {
   padding-bottom: 1em;
 }
 
-.col-title-name {
+.title-name {
   font-size: 1.6em;
   vertical-align: top;
   font-weight: bold;
 }
 
-.col-header-blue {
+.header-blue {
   color: #4188C7;
   font-size: 1em;
   font-weight: bold;
 }
 
-.col-header-job {
+.header-job {
   font-weight: bold;
   font-size: 1.4em;
 }

@@ -7,119 +7,118 @@
 {% endblock %}
 
 {% block downloadpdf %}
-<a href="./sergiy_ryabukha_cv.pdf" class="button is-info">
+<a href="./sergiy_ryabukha_cv.pdf" class="button primary">
   download pdf
 </a>
 {% endblock %}
 
 {% block content %}
-<div class="page-print">
-  <div class="columns is-centered">
-    <div class="column column-print is-2">
-      <figure class="image is-128x128">
-        <!-- <div class="icon-generic py-4"></div> -->
-        <img src="{{ CV_DATA.photo.path }}">
-      </figure>
+<div class="row">
+  <div class="col-2 cv-print">
+    <img src="{{ CV_DATA.photo.path }}">
+  </div>
+  <div class="col-5 cv-print">
+    <div class="title-name">
+      {{ CV_DATA.name.eng }}</br>
+      ({{ CV_DATA.name.ukr }})
     </div>
-    <div class="column column-print is-4">
-      <div class="col-title-name">
-        {{ CV_DATA.name.eng }}</br>
-        ({{ CV_DATA.name.ukr }})
-      </div>
-      <div class="col-title-job">
-        {{ CV_DATA.job.title }}
-      </div>
-    </div>
-    <div class="column column-print is-3">
-      <div>
-        {{ CV_DATA.contacts.location }}
-      </div>
-      <div class="has-text-weight-bold">
-        {{ CV_DATA.contacts.tel }}</br>
-        {{ CV_DATA.contacts.email }}</br>
-      </div>
+    <div class="title-job">
+      {{ CV_DATA.job.title }}
     </div>
   </div>
+  <div class="col-1"></div>
+  <div class="col-4 cv-print">
+    <div>
+      {{ CV_DATA.contacts.location }}
+    </div>
+    <div>
+      <strong>{{ CV_DATA.contacts.tel }}</strong></br>
+      <strong>{{ CV_DATA.contacts.email }}</strong></br>
+    </div>
+  </div>
+</div>
 
-  <div class="columns is-centered">
-    <div class="column column-print is-6">
-      <div class="col-header-blue col-block">
-        {{ CV_DATA.jobs_block_title }}
-      </div>
+<div class="is-full-width"></div>
 
-      {% for job in CV_DATA.jobs %}
-      <div class="col-block">
-        <div class="col-header-job">
-          {{ job.name }}
-        </div>
-        <div class="is-family-monospace">
-          {{ job.years }}
-        </div>
-        <div>
-          {{ job.description | replace("\n", "<br>\n")}}
-        </div>
-      </div>
-      {% endfor %}
 
-      <div class="col-header-blue col-block">
-        {{ CV_DATA.experience_block_title }}
-      </div>
-
-      <div class="col-text col-block">
-        <ul class="ul">
-          {% for exp in CV_DATA.experience %}
-          <li>{{ exp }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-
+<div class="row">
+  <div class="col-7 cv-print">
+    <div class="header-blue block">
+      {{ CV_DATA.jobs_block_title }}
     </div>
 
-    <div class="column column-print is-3">
-
-      <div class="col-header-blue col-block">
-        {{ CV_DATA.education_block_title }}
+    {% for job in CV_DATA.jobs %}
+    <div class="block">
+      <div class="header-job">
+        {{ job.name }}
       </div>
-
-      {% for edu in CV_DATA.education %}
-      <div class="col-block">
-        <div>
-          <strong class="has-text-weight-bold">{{ edu.name }}.</strong> {{ edu.description }}
-        </div>
-        <div class="is-family-monospace">
-          {{ edu.years }}
-        </div>
+      <div class="is-family-monospace">
+        {{ job.years }}
       </div>
-      {% endfor %}
-
-      <div class="col-header-blue col-block">
-        {{ CV_DATA.courses_block_title }}
+      <div>
+        {{ job.description | replace("\n", "<br>\n")}}
       </div>
-
-      {% for cours in CV_DATA.courses %}
-      <div class="col-block">
-        <div>
-          <strong class="has-text-weight-bold">{{ cours.name }}.</strong> {{ cours.description }}
-        </div>
-        <div class="is-family-monospace">
-          {{ cours.years }}
-        </div>
-      </div>
-      {% endfor %}
-
-      <div class="col-header-blue col-block">
-        {{ CV_DATA.languages_block_title }}
-      </div>
-
-      <div class="col-block">
-        <div>
-          {% for lang in CV_DATA.languages %}
-          {{ lang.name }} - {{ lang.level }}</br>
-          {% endfor %}
-        </div>
-      </div>
-
     </div>
+    {% endfor %}
+
+    <div class="header-blue block">
+      {{ CV_DATA.experience_block_title }}
+    </div>
+
+    <div class="block">
+      <ul class="ul">
+        {% for exp in CV_DATA.experience %}
+        <li>{{ exp }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+  <div class="col-1"></div>
+  <div class="col-4 cv-print">
+
+    <div class="header-blue block">
+      {{ CV_DATA.education_block_title }}
+    </div>
+
+    {% for edu in CV_DATA.education %}
+    <div class="block">
+      <div>
+        <strong>{{ edu.name }}.</strong> {{ edu.description }}
+      </div>
+      <div class="is-family-monospace">
+        {{ edu.years }}
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="header-blue block">
+      {{ CV_DATA.courses_block_title }}
+    </div>
+
+    {% for cours in CV_DATA.courses %}
+    <div class="block">
+      <div>
+        <strong>{{ cours.name }}.</strong> {{ cours.description }}
+      </div>
+      <div class="is-family-monospace">
+        {{ cours.years }}
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="header-blue block">
+      {{ CV_DATA.languages_block_title }}
+    </div>
+
+    <div class="block">
+      <div>
+        {% for lang in CV_DATA.languages %}
+        {{ lang.name }} - {{ lang.level }}</br>
+        {% endfor %}
+      </div>
+    </div>
+
   </div>
 </div>
 {% endblock %}
