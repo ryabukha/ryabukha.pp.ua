@@ -20,15 +20,8 @@ def render_pdf(
 ):
 
     html = HTML(source_html_file)
-    css = CSS(string='''
-        .print-hidden {
-            display: none;
-        }
-        '''
-    )
 
-    html.write_pdf(
-        output_file, stylesheets=[css])
+    html.write_pdf(output_file)
 
 if __name__ == "__main__":
     source_html_file = os.path.join(sys.argv[1], "cv.html")
