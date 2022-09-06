@@ -29,6 +29,7 @@ AUTHOR_FEED_RSS = None
 # Social widget
 SOCIAL = (('email', 'mailto:s.ryabukha@gmail.com', 's.ryabukha@gmail.com'),
         ('github', 'https://github.com/ryabukha', 'github.com/ryabukha'),
+        ('linkedin.com', 'https://linkedin.com/in/sergiy-ryabukha', 'sergiy ryabukha'),
         ('telegram', 'https://t.me/serg_ryabukha', 'serg_ryabukha'))
 
 DEFAULT_PAGINATION = False
