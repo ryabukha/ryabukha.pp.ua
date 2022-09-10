@@ -28,7 +28,3 @@
 .text-bold {
   font-weight: bold;
 }
-
-.is-family-monospace {
-  font-family: var(--font-family-mono);
-}
