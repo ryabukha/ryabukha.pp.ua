@@ -1,46 +1,46 @@
 @page {
-    margin-top: 1.5cm;
-    margin-bottom: 1cm;
-    margin-left: 1.5cm;
-    margin-right: 1.5cm;
-    padding-top: 0cm;
-    padding-left: 0cm;
-    padding-right: 0cm;
-    size: A4 portrait;
+  margin-top: 1.5cm;
+  margin-bottom: 1cm;
+  margin-left: 1.5cm;
+  margin-right: 1.5cm;
+  padding-top: 0cm;
+  padding-left: 0cm;
+  padding-right: 0cm;
+  size: A4 portrait;
 }
 
 body {
-    font-size: 10pt;
+  font-size: 10pt;
 }
 .col-1 {
-    width: 1cm;
+  width: 1cm;
 }
 .col-2 {
-    width: 3cm;
+  width: 3cm;
 }
 .col-3 {
-    width: 4.5cm;
+  width: 4.5cm;
 }
 .col-5 {
-    width: 7.5cm;
+  width: 7.5cm;
 }
 .col-4 {
-    width: 6cm;
+  width: 6cm;
 }
 .col-6 {
-    width: 9cm;
+  width: 9cm;
 }
 .col-7 {
-    width: 10.5cm;
+  width: 10.5cm;
 }
 .col-8 {
-    width: 12cm;
+  width: 12cm;
 }
 .row {
-   display: table;
-    width: 18cm;
+  display: table;
+  width: 18cm;
 }
 .cv-print {
-    display: table-cell;
-    vertical-align: top;
+  display: table-cell;
+  vertical-align: top;
 }
