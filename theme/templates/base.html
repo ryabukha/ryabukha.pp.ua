@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="./static/css/chota.min.css">
-    <link rel="stylesheet" href="./static/css/chota.var.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <link rel="apple-touch-icon" sizes="180x180" href="./static/ico/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./static/ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./static/ico/favicon-16x16.png">
-    <link rel="manifest" href="./static/ico/site.webmanifest">
+    <link rel="stylesheet" href="./static/css/chota.min.css" />
+    <link rel="stylesheet" href="./static/css/chota.var.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./static/ico/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./static/ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./static/ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./static/ico/site.webmanifest" />
     {% block css %}{% endblock %}
-</head>
+  </head>
 
-<body>
-    <section class="container">
+  <body>
+    <section class="container" id="page-container">
+      <div id="content-wrap">
         <nav class="nav hide-pr">
-            <div class="nav-center">
-                {% block downloadpdf %}{% endblock %}
-            </div>
-            <div class="nav-right">
-                {% for title, link in MENUITEMS %}
-                <a href="{{ link }}" class="button">
-                    {{ title }}
-                </a>
-                {% endfor %}
-            </div>
+          <div class="nav-center">{% block downloadpdf %}{% endblock %}</div>
+          <div class="nav-right">
+            {% for title, link in MENUITEMS %}
+            <a href="{{ link }}" class="button"> {{ title }} </a>
+            {% endfor %}
+          </div>
         </nav>
 
-        <div style="min-height: 400px;">
-            <h1></h1>
+        <div>
+          <h1></h1>
 
-            {% block content %}{% endblock %}
+          {% block content %}{% endblock %}
         </div>
-
-        <footer class="is-right hide-pr">
-            <p>2022</p>
-        </footer>
+      </div>
+      <footer id="footer" class="is-right hide-pr">
+        <p>2022</p>
+      </footer>
     </section>
-</body>
-
+  </body>
 </html>
