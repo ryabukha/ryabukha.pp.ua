@@ -1,4 +1,7 @@
+/**/.*
 __pycache__
 venv
 output
 html
+
+!/**/.gitignore

@@ -52,6 +52,9 @@ education:
     description: "Bachelor degree. Faculty of Chemical Engineering."
 courses_block_title: "Courses"
 courses:
+  - name: "IT Skills 4U"
+    years: "2022"
+    description: "Preparation for aws certification."
   - name: "OTUS"
     years: "2017-2018"
     description: "DevOps practices and tools."
