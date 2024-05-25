@@ -9,9 +9,13 @@ jobs:
   get-and-deploy-cert-to-s3:
     runs-on: ubuntu-20.04
     steps:
+    - name: install deps
+      run: |
+        apt update
+        apt install -y python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev dialog
     - name: install certbot
       run: |
-        pip install zope.interface==5.4.0
+        # pip install zope.interface==5.4.0
         pip install certbot-s3front
 
     - name: get and deploy cert to s3
@@ -19,10 +23,8 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        certbot -n --init --agree-tos -a \
-        certbot-s3front:auth -i certbot-s3front:installer \
+        certbot --agree-tos -a certbot-s3front:auth \
         --certbot-s3front:auth-s3-bucket ${{ secrets.AWS_S3_BUCKET }} \
+        -i certbot-s3front:installer \
         --certbot-s3front:installer-cf-distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} \
-        --email ${{ secrets.EMAIL }} \
-        -d ${{ secrets.DOMAIN }} \
-        --config-dir ~/.certbot/config --logs-dir ~/.certbot/logs --work-dir ~/.certbot/work
+        -d ${{ secrets.DOMAIN }}
