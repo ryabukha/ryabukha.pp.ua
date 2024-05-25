@@ -12,7 +12,7 @@ jobs:
     - name: install deps
       run: |
         sudo apt update
-        sudo apt install -y python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev dialog
+        sudo apt install -y python3-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev dialog
     - name: install certbot
       run: |
         # pip install zope.interface==5.4.0
