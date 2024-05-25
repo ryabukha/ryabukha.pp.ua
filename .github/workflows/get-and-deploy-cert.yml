@@ -7,15 +7,17 @@ on:
 
 jobs:
   get-and-deploy-cert-to-s3:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: install deps
       run: |
         sudo apt update
-        sudo apt install -y python3-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev dialog
+        sudo apt install -y python3-pip python3-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev dialog
     - name: install certbot
       run: |
-        # pip install zope.interface==5.4.0
+        python3 -m pip install pip --upgrade
+        pip install pyopenssl --upgrade
+        pip install zope.interface==5.4.0
         pip install certbot-s3front
 
     - name: get and deploy cert to s3
