@@ -19,5 +19,5 @@ jobs:
         AWS_CERTIFICATE_ARN: ${{ secrets.AWS_CERTIFICATE_ARN }}
         MY_DOMAIN: ${{ secrets.MY_DOMAIN }}
     steps:
-      - name: issue-cert
-        run: (/issue-cert.sh)
+      - name: /cert-issue.sh
+        run: (/cert-issue.sh)
