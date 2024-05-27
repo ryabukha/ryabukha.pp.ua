@@ -26,4 +26,4 @@ jobs:
       - name: ls
         run: ls -loh /tmp
       - name: aws acm
-        run: aws acm import-certificate --certificate fileb://tmp/cert.pem --certificate-chain fileb://tmp/fullchain.pem --private-key fileb://tmp/key.pem --certificate-arn ${AWS_CERTIFICATE_ARN}
+        run: aws acm import-certificate --certificate fileb:///tmp/cert.pem --certificate-chain fileb:///tmp/fullchain.pem --private-key fileb:///tmp/key.pem --certificate-arn ${AWS_CERTIFICATE_ARN}
