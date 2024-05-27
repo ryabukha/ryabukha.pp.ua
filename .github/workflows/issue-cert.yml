@@ -6,7 +6,7 @@ on:
     - cron: '30 9 16 * *'
 
 jobs:
-  container-test-job:
+  issue-cert:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/ryabukha/acme.sh:dev
@@ -20,7 +20,7 @@ jobs:
         MY_DOMAIN: ${{ secrets.MY_DOMAIN }}
     steps:
       - name: acme.sh issue
-        run: acme.sh --issue --dns dns_cf -d ${MY_DOMAIN} --server letsencrypt_test -k 2048 -w /tmp
+        run: acme.sh --issue --dns dns_cf -d ${MY_DOMAIN} --server letsencrypt -k 2048 -w /tmp
       - name: acme.sh install
         run: acme.sh --install-cert -d ${MY_DOMAIN} --key-file /tmp/key.pem --cert-file /tmp/cert.pem --fullchain-file /tmp/fullchain.pem --reloadcmd "cat /tmp/cert.pem"
       - name: ls
