@@ -6,7 +6,7 @@ on:
     - cron: '30 9 16 * *'
 
 jobs:
-  container-test-job:
+  issue-cert:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/ryabukha/acme.sh:dev
@@ -19,5 +19,11 @@ jobs:
         AWS_CERTIFICATE_ARN: ${{ secrets.AWS_CERTIFICATE_ARN }}
         MY_DOMAIN: ${{ secrets.MY_DOMAIN }}
     steps:
-      - name: issue-cert
-        run: (/issue-cert.sh)
+      - name: acme.sh issue
+        run: acme.sh --issue --dns dns_cf -d ${MY_DOMAIN} --server letsencrypt -k 2048 -w /tmp
+      - name: acme.sh install
+        run: acme.sh --install-cert -d ${MY_DOMAIN} --key-file /tmp/key.pem --cert-file /tmp/cert.pem --fullchain-file /tmp/fullchain.pem --reloadcmd "cat /tmp/cert.pem"
+      - name: ls
+        run: ls -loh /tmp
+      - name: aws acm
+        run: aws acm import-certificate --certificate fileb:///tmp/cert.pem --certificate-chain fileb:///tmp/fullchain.pem --private-key fileb:///tmp/key.pem --certificate-arn ${AWS_CERTIFICATE_ARN}
