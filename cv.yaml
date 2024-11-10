@@ -5,7 +5,7 @@ name:
 photo:
   path: "./static/photo/smile128.svg"
 job:
-  title: "junior DevOps, System Administrator"
+  title: "DevOps, System Administrator"
 contacts:
   location: "Kyiv, Ukraine"
   tel: "+38 099 289 0420"
