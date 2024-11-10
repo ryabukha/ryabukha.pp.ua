@@ -1,3 +1,4 @@
 pelican
 weasyprint
 PyYAML
+awscrt
