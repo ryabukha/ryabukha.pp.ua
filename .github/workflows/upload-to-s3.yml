@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     if: github.event.pull_request.merged == true
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
     - name: install requirements
@@ -27,7 +27,7 @@ jobs:
   invalidate-cloudfront:
     needs: deploy
     if: github.event.pull_request.merged == true
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Invalidate Cloudfront
       uses: docker://rewindio/github-action-cloudfront-invalidate
